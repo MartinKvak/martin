@@ -1,0 +1,132 @@
+/* Globálne nastavenie */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Pozadie a nastavenia stránky */
+body {
+    background-image: url("{% static 'polls/background.jpg' %}"); /* Dynamické pozadie */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Konteiner pre obsah */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Polopriehľadné biele pozadie pre lepší kontrast */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efekt pri hover na kontajner */
+.container:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Nadpis otázky */
+.question-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #003366; /* Hlboká modrá farba pre seriózny vzhľad */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Efekt pri hover na nadpise */
+.question-title:hover {
+    color: #00509d; /* Zmena farby pri hover */
+}
+
+/* Zoznam výsledkov */
+.results-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Výsledky jednotlivých položiek */
+.result-item {
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efekt pri hover na položky výsledkov */
+.result-item:hover {
+    background-color: #f9f9f9;
+    transform: translateX(5px); /* Jemný posun do strany pri hover */
+}
+
+/* Vzhľad textu vo výsledkoch */
+.choice-text {
+    font-weight: bold;
+    color: #003366;
+}
+
+.votes-count {
+    font-size: 1.1rem;
+    color: #0073e6; /* Svetlomodrá farba pre počet hlasov */
+}
+
+/* Odkaz na opätovné hlasovanie */
+.vote-again-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid #003366;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Efekt pri hover na odkaz */
+.vote-again-link:hover {
+    background-color: #003366;
+    color: white;
+}
+
+/* Prispôsobenie pre mobilné zariadenia */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .question-title {
+        font-size: 1.8rem;
+    }
+
+    .result-item {
+        font-size: 1rem;
+    }
+
+    .vote-again-link {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+}

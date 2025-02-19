@@ -1,0 +1,139 @@
+/* Globálne nastavenie */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Pozadie stránky s gradientom */
+body {
+    background: linear-gradient(135deg, #6e7dff, #00bcd4); /* Dynamický gradient pozadia */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Container pre formulár */
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Vyššia nepriehľadnosť pre lepší kontrast */
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animácia kontajnera pri hover */
+.container:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Nadpis */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #003366; /* Hlboká modrá farba pre seriózny vzhľad */
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Vzhľad otázky */
+.question-text {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #003366;
+    margin-bottom: 1.5rem;
+}
+
+/* Vzhľad chýb */
+.error-message {
+    color: red;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* Výber možností */
+.choice-item {
+    margin: 1.2rem 0;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.choice-item:hover {
+    background-color: #f0f0f0;
+    transform: translateX(5px); /* Jemný posun pri hover */
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
+}
+
+input[type="radio"]:checked {
+    transform: scale(1.4); /* Väčšie zaškrtávacie políčka pri výbere */
+}
+
+/* Tlačidlo na odoslanie */
+.submit-btn {
+    background-color: #003366; /* Tmavá modrá farba */
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 30px; /* Zaoblené rohy pre modernejší vzhľad */
+    cursor: pointer;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #00509d; /* Svetlejšia modrá pri hover */
+    transform: scale(1.05); /* Zvýšenie tlačidla pri hover */
+}
+
+.submit-btn:focus {
+    outline: none;
+}
+
+/* Vylepšenie vzhľadu pri menších obrazovkách */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .question-text {
+        font-size: 1.4rem;
+    }
+
+    .choice-item {
+        font-size: 1.1rem;
+    }
+
+    .submit-btn {
+        font-size: 1.1rem;
+        padding: 0.8rem 2rem;
+    }
+}
